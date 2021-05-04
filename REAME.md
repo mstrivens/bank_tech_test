@@ -67,7 +67,7 @@ Input            |         Output
 1, 2             |        Credit || 1 || Balance || 3
 0                |        Debit || 0 Credit || Balance || 0
 1                |        Debit || 1 Credit || Balance || 1
-1, 10            |        Debit || 11 Credit || Balance || 11
+1                |        Date || 04/05/2021 || Debit || 1 Credit || Balance || 1
 
 
 #### Domain Modelling
