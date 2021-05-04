@@ -62,7 +62,6 @@ Since the requirements dictated an irb app i decided to use ruby as this would h
 Input            |         Output
 0                |        Credit || 0
 1                |        Credit || 1
-10               |        Credit || 10
 1, 10            |        Credit || 11
 0                |        Debit || 0
 1                |        Debit || 1
