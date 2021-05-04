@@ -1,9 +1,9 @@
-require 'account'
+require 'transactions'
 
-describe Account do
+describe Transactions do
 
   before do
-    @account = Account.new
+    @account = Transactions.new
     allow(@account).to receive(:date).and_return("04/05/2021")
   end
 

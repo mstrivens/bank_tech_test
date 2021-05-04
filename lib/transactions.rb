@@ -1,4 +1,4 @@
-class Account
+class Transactions
   STARTING_BALANCE = 0
   attr_reader :date
   def initialize
