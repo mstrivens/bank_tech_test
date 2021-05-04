@@ -1,17 +1,17 @@
-class Transactions
+class Transaction
   STARTING_BALANCE = 0
-  attr_reader :date
+  attr_reader :date, :transaction_history
   def initialize
     @balance = STARTING_BALANCE
     @date = Time.new.strftime("%d/%m/%Y")
     @transaction_history = ["Date || Credit || Debit || Balance"]
   end
 
-  def statement
-    @transaction_history.each { |row|
-    puts row
-    }
-  end
+  # def statement
+  #   @transaction_history.each { |row|
+  #   puts row
+  #   }
+  # end
 
   def credit(amount)
     increase_balance_by(amount)
