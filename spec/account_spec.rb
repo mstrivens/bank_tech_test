@@ -22,7 +22,7 @@ describe Account do
 
   describe '#debit' do
     it 'allows the user to withdraw money' do
-      expect(subject.debit(1)).to eq 'Credit ||  || Debit || 1 || Balance || -1'
+      expect(subject.debit(1)).to eq 'Date || 04/05/2021 || Credit ||  || Debit || 1 || Balance || -1'
     end
   end
 end
