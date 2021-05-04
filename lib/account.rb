@@ -7,7 +7,7 @@ class Account
   end
 
   def statement
-    "Date || Credit || Debit || Balance\n04/05/2021 || || || "
+    "Date || Credit || Debit || Balance\n04/05/2021 || #{@balance} || || #{@balance}"
   end
 
   def credit(amount)

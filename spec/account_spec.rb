@@ -35,12 +35,12 @@ describe Account do
   describe '#statement' do
     it 'returns a transaction history' do
       subject.credit(0)
-      expect(subject.statement).to eq "Date || Credit || Debit || Balance\n04/05/2021 || || || "
+      expect(subject.statement).to eq "Date || Credit || Debit || Balance\n04/05/2021 || 0 || || 0"
     end
 
-    # it 'returns a transaction history' do
-    #   subject.credit(2)
-    #   expect(subject.statement).to eq "Date || Credit || Debit || Balance\n04/05/2021 || 2 || || 2"
-    # end
+    it 'returns a transaction history' do
+      subject.credit(2)
+      expect(subject.statement).to eq "Date || Credit || Debit || Balance\n04/05/2021 || 2 || || 2"
+    end
   end
 end
