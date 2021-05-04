@@ -21,10 +21,10 @@ describe Statement do
       expect(subject.print_statement(@transaction.transaction_history)).to eq ["Date || Credit || Debit || Balance", "04/05/2021 || || 1 || -1"]
     end
 
-    # it 'when debitted twice it returns the transactions in reverse chronological order' do
-    #   @transaction.debit(0)
-    #   @transaction.debit(1)
-    #   expect(subject.statement).to eq ["Date || Credit || Debit || Balance", "04/05/2021 || || 1 || -1", "04/05/2021 || || 0 || 0"]
-    # end
+    it 'when debitted twice it returns the transactions in reverse chronological order' do
+      @transaction.debit(0)
+      @transaction.debit(1)
+      expect(subject.print_statement(@transaction.transaction_history)).to eq ["Date || Credit || Debit || Balance", "04/05/2021 || || 1 || -1", "04/05/2021 || || 0 || 0"]
+    end
   end
 end
