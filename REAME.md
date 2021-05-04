@@ -63,9 +63,11 @@ Input            |         Output
 0                |        Credit || 0
 1                |        Credit || 1
 1, 10            |        Credit || 11
-0                |        Debit || 0
-1                |        Debit || 1
-10               |        Debit || 10
-1, 10            |        Debit || 11
+1                |        Credit || 1 || Balance || 1
+1, 2             |        Credit || 1 || Balance || 1
+0                |        Debit || 0 Credit || Balance || 0
+1                |        Debit || 1 Credit || Balance || 1
+1, 10            |        Debit || 11 Credit || Balance || 11
+
 
 #### Domain Modelling

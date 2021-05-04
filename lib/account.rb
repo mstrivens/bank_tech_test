@@ -5,6 +5,10 @@ class Account
 
   def account(amount)
     @balance << amount
-    "Credit || #{@balance.sum}"
+    if amount >= 1
+      "Credit || #{@balance.sum}"
+    else
+      "Credit || 0 || Debit || #{amount}"
+    end
   end
 end
