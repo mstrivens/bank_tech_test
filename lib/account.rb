@@ -10,6 +10,6 @@ class Account
 
   def debit(amount)
     @balance -= amount
-    "Credit ||  || Debit || #{amount}"
+    "Credit ||  || Debit || #{amount} || Balance || #{@balance}"
   end
 end
