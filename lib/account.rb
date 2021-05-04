@@ -1,6 +1,6 @@
 class Account
   STARTING_BALANCE = 0
-  attr_accessor :date
+  attr_reader :date
   def initialize
     @balance = STARTING_BALANCE
     @date = Time.new.strftime("%d/%m/%Y")
