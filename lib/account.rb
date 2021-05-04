@@ -4,11 +4,18 @@ class Account
   end
 
   def account(amount)
-    @balance << amount
     if amount >= 1
-      "Credit || #{@balance.sum}"
+      credit(amount)
     else
-      "Credit || 0 || Debit || #{amount}"
+      debit(amount)
     end
+  end
+
+  def credit(amount)
+    "Credit || #{amount}"
+  end
+
+  def debit(amount)
+    "Credit || 0 || Debit || #{amount}"
   end
 end
