@@ -15,13 +15,13 @@ class Account
 
   def credit(amount)
     increase_balance_by(amount)
-    @transaction_history << credit_transaction_string(amount)
+    @transaction_history.insert(1, credit_transaction_string(amount))
     credit_transaction_string(amount)
   end
 
   def debit(amount)
     decrease_balance_by(amount)
-    @transaction_history << debit_transaction_string(amount)
+    @transaction_history.insert(1, debit_transaction_string(amount))
     debit_transaction_string(amount)
   end
 
