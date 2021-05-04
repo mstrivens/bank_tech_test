@@ -7,7 +7,6 @@ class Account
   end
 
   def statement
-    # "Date || Credit || Debit || Balance\n04/05/2021 || || || \n" +
     @transaction_history.each { |row|
     puts row
     }
