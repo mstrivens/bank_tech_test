@@ -28,25 +28,30 @@ describe Account do
 
   describe '#debit' do
     it 'allows the user to withdraw money' do
-      expect(subject.debit(1)).to eq 'Date || 04/05/2021 || Credit ||  || Debit || 1 || Balance || -1'
+      expect(subject.debit(1)).to eq '04/05/2021 || || 1 || -1'
     end
   end
 
   describe '#statement' do
-    it 'returns a transaction history' do
+    it 'when creditted returns a transaction history' do
       subject.credit(0)
       expect(subject.statement).to eq ["Date || Credit || Debit || Balance", "04/05/2021 || 0 || || 0"]
     end
 
-    it 'returns a transaction history' do
+    it 'when creditted returns a transaction history' do
       subject.credit(2)
       expect(subject.statement).to eq ["Date || Credit || Debit || Balance", "04/05/2021 || 2 || || 2"]
     end
 
-    it 'returns a transaction history' do
+    it 'when creditted returns a transaction history' do
       subject.credit(0)
       subject.credit(1)
       expect(subject.statement).to eq ["Date || Credit || Debit || Balance", "04/05/2021 || 0 || || 0", "04/05/2021 || 1 || || 1"]
+    end
+
+    it 'when debitted returns a transaction history' do
+      subject.debit(0)
+      expect(subject.statement).to eq ["Date || Credit || Debit || Balance", "04/05/2021 || || 0 || 0"]
     end
   end
 end

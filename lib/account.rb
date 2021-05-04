@@ -20,6 +20,7 @@ class Account
 
   def debit(amount)
     debit_balance(amount)
+    @transaction_history << debit_transaction_string(amount)
     debit_transaction_string(amount)
   end
 
@@ -30,7 +31,7 @@ class Account
   end
 
   def debit_transaction_string(amount)
-    "Date || #{@date} || Credit ||  || Debit || #{amount} || Balance || #{@balance}"
+    "#{@date} || || #{amount} || #{@balance}"
   end
 
   def credit_balance(amount)
