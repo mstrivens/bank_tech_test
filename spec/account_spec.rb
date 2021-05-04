@@ -53,5 +53,10 @@ describe Account do
       subject.debit(0)
       expect(subject.statement).to eq ["Date || Credit || Debit || Balance", "04/05/2021 || || 0 || 0"]
     end
+
+    it 'when debitted returns a transaction history' do
+      subject.debit(1)
+      expect(subject.statement).to eq ["Date || Credit || Debit || Balance", "04/05/2021 || || 1 || -1"]
+    end
   end
 end
