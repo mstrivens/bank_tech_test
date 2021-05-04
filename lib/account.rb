@@ -3,14 +3,6 @@ class Account
     @balance = 0
   end
 
-  def account(amount)
-    if amount >= 1
-      credit(amount)
-    else
-      debit(amount)
-    end
-  end
-
   def credit(amount)
     @balance += amount
     "Credit || #{amount} || Debit || || Balance || #{@balance}"
