@@ -1,3 +1,3 @@
 def account(amount)
-  'Credit || 0'
+  "Credit || #{amount}"
 end
