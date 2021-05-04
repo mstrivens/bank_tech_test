@@ -1,7 +1,8 @@
 class Account
+  STARTING_BALANCE = 0
   attr_accessor :date
   def initialize
-    @balance = 0
+    @balance = STARTING_BALANCE
     @date = Time.new.strftime("%d/%m/%Y")
     @transaction_history = ["Date || Credit || Debit || Balance"]
   end
