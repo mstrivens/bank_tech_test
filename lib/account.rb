@@ -1,10 +1,9 @@
 class Account
   def initialize
-    @balance = []
+    @balance = 0
   end
 
   def account(amount)
-    @balance << amount
     if amount >= 1
       credit(amount)
     else
@@ -13,10 +12,12 @@ class Account
   end
 
   def credit(amount)
-    "Credit || #{amount} || Debit || || Balance || #{@balance.sum}"
+    @balance += amount
+    "Credit || #{amount} || Debit || || Balance || #{@balance}"
   end
 
   def debit(amount)
+    @balance -= amount
     "Credit ||  || Debit || #{amount}"
   end
 end
