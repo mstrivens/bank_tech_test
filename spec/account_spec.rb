@@ -9,20 +9,20 @@ describe Account do
 
   describe '#credit' do
     it 'display an amount as credit' do
-      expect(@account.credit(0)).to eq 'Date || 04/05/2021 || Credit || 0 || Debit || || Balance || 0'
+      expect(@account.credit(0)).to eq '04/05/2021 || 0 || || 0'
     end
 
     it 'display an amount as credit' do
-      expect(subject.credit(1)).to eq 'Date || 04/05/2021 || Credit || 1 || Debit || || Balance || 1'
+      expect(subject.credit(1)).to eq '04/05/2021 || 1 || || 1'
     end
 
     it 'stores multiple entries as credit' do
       subject.credit(1)
-      expect(subject.credit(10)).to eq 'Date || 04/05/2021 || Credit || 10 || Debit || || Balance || 11'
+      expect(subject.credit(10)).to eq '04/05/2021 || 10 || || 11'
     end
 
     it 'displays the data of transaction' do
-      expect(subject.credit(1)).to eq "Date || 04/05/2021 || Credit || 1 || Debit || || Balance || 1"
+      expect(subject.credit(1)).to eq '04/05/2021 || 1 || || 1'
     end
   end
 
@@ -35,12 +35,18 @@ describe Account do
   describe '#statement' do
     it 'returns a transaction history' do
       subject.credit(0)
-      expect(subject.statement).to eq "Date || Credit || Debit || Balance\n04/05/2021 || 0 || || 0"
+      expect(subject.statement).to eq ["Date || Credit || Debit || Balance", "04/05/2021 || 0 || || 0"]
     end
 
     it 'returns a transaction history' do
       subject.credit(2)
-      expect(subject.statement).to eq "Date || Credit || Debit || Balance\n04/05/2021 || 2 || || 2"
+      expect(subject.statement).to eq ["Date || Credit || Debit || Balance", "04/05/2021 || 2 || || 2"]
+    end
+
+    it 'returns a transaction history' do
+      subject.credit(0)
+      subject.credit(1)
+      expect(subject.statement).to eq ["Date || Credit || Debit || Balance", "04/05/2021 || 0 || || 0", "04/05/2021 || 1 || || 1"]
     end
   end
 end
