@@ -3,6 +3,7 @@ class Account
   def initialize
     @balance = 0
     @date = Time.new.strftime("%d/%m/%Y")
+    @transaction_history = []
   end
 
   def statement
@@ -11,11 +12,21 @@ class Account
 
   def credit(amount)
     @balance += amount
-    "Date || #{@date} || Credit || #{amount} || Debit || || Balance || #{@balance}"
+    credit_transaction_string(amount)
   end
 
   def debit(amount)
     @balance -= amount
+    debit_transaction_string(amount)
+  end
+
+  private
+
+  def credit_transaction_string(amount)
+    "Date || #{@date} || Credit || #{amount} || Debit || || Balance || #{@balance}"
+  end
+
+  def debit_transaction_string(amount)
     "Date || #{@date} || Credit ||  || Debit || #{amount} || Balance || #{@balance}"
   end
 end
