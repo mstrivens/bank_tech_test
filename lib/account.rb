@@ -11,12 +11,12 @@ class Account
   end
 
   def credit(amount)
-    @balance += amount
+    credit_balance(amount)
     credit_transaction_string(amount)
   end
 
   def debit(amount)
-    @balance -= amount
+    debit_balance(amount)
     debit_transaction_string(amount)
   end
 
@@ -28,5 +28,13 @@ class Account
 
   def debit_transaction_string(amount)
     "Date || #{@date} || Credit ||  || Debit || #{amount} || Balance || #{@balance}"
+  end
+
+  def credit_balance(amount)
+    @balance += amount
+  end
+
+  def debit_balance(amount)
+    @balance -= amount
   end
 end
